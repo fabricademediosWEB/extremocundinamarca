@@ -3,24 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="content">
-	<title>Cundinamarca Extrema</title>
+	@yield('tittle')
 	{{HTML::style('css/normalize.css');}}
 	{{HTML::style('css/foundation.min.css');}}
+	{{HTML::style('css/style.css')}}
+	@yield('style')
 	{{HTML::script('js/vendor/modernizr.js');}}
+	@yield('script')
 </head>
 <body>
-	<header class="fixed">
-		<nav class="top-bar" data-topbar role="navigation">
-		  <ul class="title-area">
-		    <li class="name row">
-		      <img src="Resource/img/logo/logo.jpeg" class="small">
-		    </li>
-		  </ul>
-		</nav>
+	<header class="top-bar" data-topbar role="navigation">
+		<div class="row">
+			<!--<div class="small-2 medium-1 large-1 columns five-up">-->			
+				<a href="" class="item">
+					<img src="resources/img/logo/logo.jpeg" alt="" class="small-2 medium-1 large-1 columns">
+				</a>				
+			<!--</div>-->
+			<div class="small-10 medium-11 large-11 columns">
+				<nav>
+					<section class="top-bar-section">
+						<ul class="left">
+							<li><a href="">Inicio</a></li>
+							<li><a href="">Deportes Extremos</a></li>
+							<li><a href="">Practica tu Deporte</a></li>
+						</ul>
+						<ul class="right">										<li><a href="">Ingresa</a></li>						<li><a href="">Registrate</a></li>
+						</ul>
+					</section>					
+				</nav>
+			</div>
+		</div>
 	</header>
 	@yield('content')
-
+	<div class="text-centerd" id="sticky_footer">
+		<div class="row">
+			<div class="small-12-columns">
+				<a href="">
+					<p class="text-center">Acerca de nosotros</p>
+				</a>
+			</div>
+		</div>
+	</div>
 	{{HTML::script('js/vendor/jquery.js');}}
 	{{HTML::script('js/foundation.min.js');}}
+	{{HTML::script('js/foundation/foundation.js');}}
 </body>
 </html>
