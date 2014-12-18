@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('tittle')
-	<title>Cundinamarca Extrema</title>
+	<title>Inicio | Cundinamarca Extrema</title>
 @stop
 @section('content')
 <section class="row">

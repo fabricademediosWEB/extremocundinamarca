@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('page.home');
 });
+Route::get('registro', function(){
+	return View::make('page.registro');
+});
+Route::get('login', function(){
+	return View::make('page.ingreso');
+});
