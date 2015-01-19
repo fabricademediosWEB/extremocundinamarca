@@ -12,12 +12,13 @@ class CrearTablaEmpresaTransporte extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Empresa_Transporte', function(Blueprint $table)
+		Schema::create('EmpresasTransportes', function(Blueprint $table)
 		{
 			//
 			$table->increments('id');
 			$table->string('descripcion',100);
 			$table->string('telefono',45);
+			$table->timestamps();
 		});
 	}
 
@@ -28,7 +29,7 @@ class CrearTablaEmpresaTransporte extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Empresa_Transporte');
+		Schema::drop('EmpresasTransportes');
 	}
 
 }

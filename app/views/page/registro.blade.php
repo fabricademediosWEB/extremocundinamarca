@@ -6,27 +6,42 @@
 	<div class="row">
 		<fieldset class="small-10 medium-8 small-centered columns top">
 			<legend class="text-centered">Registro Empresarial</legend>
-			{{Form::open()}}
+			{{Form::open(array('url' => 'registrar'))}}
 			<div class="row">
 				<div class="large-11 columns large-centered">
 					{{Form::text('nameCompany', null, array(
-						'placeholder' => 'Nombre Empresa'
+						'placeholder' => 'Nombre Empresa',
+						'required' => 'true'
 					))}}
 					{{Form::text('nit', null, array(
 						'placeholder' => 'NIT',
 						'type' => 'number',
+						'required' => 'true',
 						'maxlength' => '10'
 					))}}
-					{{Form::select('city')}}
+					{{Form::select('cities', DB::table('ciudades')->orderBy('descripcion')->lists('descripcion','id'), null, array(
+						'placeholder' => 'Seleccione el municipio'
+					))}}
 					{{Form::text('direction', null, array(
 						'placeholder' => 'Dirección',
 						'required' => 'true',
 						'maxlength' => 200
 					))}}
-					{{Form::text('telephone', null, array(
-						'placeholder' => 'Telefono',
-						'required' => 'true'
-					))}}
+					<div class="row">
+						<div class="large-6 columns">
+							{{Form::text('telephone', null, array(
+							'placeholder' => 'Telefono',
+							'required' => 'true'
+							))}}
+						</div>
+						<div class="large-6 columns">
+							{{Form::text('telephone2', null, array(
+								'placeholder' => 'Celular',
+								'required' => 'true'
+							))}}
+						</div>
+					</div>
+					
 					{{Form::email('email', null, array(
 						'placeholder' => 'Email'
 					))}}

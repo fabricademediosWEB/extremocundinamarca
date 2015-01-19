@@ -12,16 +12,17 @@ class CrearTablaEmpresaActividad extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Empresa_Actividad', function(Blueprint $table)
+		Schema::create('Actividad_Empresa', function(Blueprint $table)
 		{
 			//
 			$table->integer('precio');
 
 			$table->unsignedInteger('empresa_id');
-			$table->foreign('empresa_id')->references('id')->on('Empresa');
+			$table->foreign('empresa_id')->references('id')->on('Empresas');
 
 			$table->unsignedInteger('actividad_id');
-			$table->foreign('actividad_id')->references('id')->on('Actividad');
+			$table->foreign('actividad_id')->references('id')->on('Actividades');
+			$table->timestamps();
 		});
 	}
 
@@ -32,7 +33,7 @@ class CrearTablaEmpresaActividad extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Empresa_Actividad');
+		Schema::drop('Actividad_Empresa');
 	}
 
 }

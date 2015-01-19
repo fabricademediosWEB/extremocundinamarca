@@ -12,14 +12,15 @@ class CrearTablaDireccion extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Direccion', function(Blueprint $table)
+		Schema::create('Direcciones', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('descripcion',100);
 			$table->string('email',45);
 
 			$table->unsignedInteger('ciudad_id');
-			$table->foreign('ciudad_id')->references('id')->on('Ciudad');
+			$table->foreign('ciudad_id')->references('id')->on('Ciudades');
+			$table->timestamps();
 		});
 	}
 
@@ -30,7 +31,7 @@ class CrearTablaDireccion extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Direccion');
+		Schema::drop('Direcciones');
 	}
 
 }

@@ -12,14 +12,17 @@ class CrearTablaCiudad extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Ciudad', function(Blueprint $table)
+		Schema::create('Ciudades', function(Blueprint $table)
 		{
+	
 			$table->increments('id');
 			$table->string('descripcion',100);
 			//Referencia a otras tablas
 			$table->unsignedInteger('departamento_id');
-			$table->foreign('departamento_id')->references('id')->on('Departamento');
+			$table->foreign('departamento_id')->references('id')->on('Departamentos');
+
 		});
+		
 	}
 
 	/**
@@ -29,7 +32,7 @@ class CrearTablaCiudad extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Ciudad');
+		Schema::drop('Ciudades');
 	}
 
 }

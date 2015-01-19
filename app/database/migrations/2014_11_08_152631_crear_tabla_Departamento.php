@@ -12,11 +12,12 @@ class CrearTablaDepartamento extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Departamento', function(Blueprint $table)
+		Schema::create('Departamentos', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('descripcion',100);
 		});
+		
 	}
 
 	/**
@@ -26,7 +27,7 @@ class CrearTablaDepartamento extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Departamento');
+		Schema::drop("Departamentos");
 	}
 
 }

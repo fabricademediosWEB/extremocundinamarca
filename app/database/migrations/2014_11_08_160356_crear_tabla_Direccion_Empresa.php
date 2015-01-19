@@ -12,14 +12,15 @@ class CrearTablaDireccionEmpresa extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Direccion_Empresa', function(Blueprint $table)
+		Schema::create('Direcciones_Empresas', function(Blueprint $table)
 		{
 			//
 			$table->unsignedInteger('direccion_id');
-			$table->foreign('direccion_id')->references('id')->on('Direccion');
+			$table->foreign('direccion_id')->references('id')->on('Direcciones');
 
 			$table->unsignedInteger('empresa_id');
-			$table->foreign('empresa_id')->references('id')->on('Empresa');
+			$table->foreign('empresa_id')->references('id')->on('Empresas');
+			$table->timestamps();
 		});
 	}
 
@@ -30,7 +31,7 @@ class CrearTablaDireccionEmpresa extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Direccion_Empresa');
+		Schema::drop('Direcciones_Empresas');
 	}
 
 }

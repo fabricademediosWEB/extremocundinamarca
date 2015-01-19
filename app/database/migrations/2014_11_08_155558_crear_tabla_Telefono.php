@@ -12,14 +12,15 @@ class CrearTablaTelefono extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Telefono', function(Blueprint $table)
+		Schema::create('Telefonos', function(Blueprint $table)
 		{
 			//
 			$table->increments('id');
 			$table->string('numero_telefono',45);
 
 			$table->unsignedInteger('direccion_id');
-			$table->foreign('direccion_id')->references('id')->on('Direccion');
+			$table->foreign('direccion_id')->references('id')->on('Direcciones');
+			$table->timestamps();
 		});
 	}
 
@@ -30,7 +31,7 @@ class CrearTablaTelefono extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Telefono');
+		Schema::drop('Telefonos');
 	}
 
 }

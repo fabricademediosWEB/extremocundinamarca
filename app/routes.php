@@ -15,9 +15,17 @@ Route::get('/', function()
 {
 	return View::make('page.home');
 });
-Route::get('registro', function(){
-	return View::make('page.registro');
-});
-Route::get('login', function(){
-	return View::make('page.ingreso');
+Route::controller('registro', 'EmpresaController');
+Route::controller('login', 'AuthController');
+Route::get('eliminar/{id}', array('uses' => 'EmpresaController@destroy'));
+Route::post('registrar', array('uses' => 'EmpresaController@store'));
+
+Route::get('prueba', function(){
+	$empresa = new Empresa;
+
+	$empresa->descripcion = 'prueba';
+	$empresa->nit = 1234;
+	$empresa->password = 'holamundo';
+
+	$empresa->save();
 });

@@ -12,7 +12,7 @@ class CrearTablaDeporte extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Deporte', function(Blueprint $table)
+		Schema::create('Deportes', function(Blueprint $table)
 		{
 			//
 			$table->increments('id');
@@ -27,7 +27,7 @@ class CrearTablaDeporte extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Deporte');
+		Schema::drop('Deportes');
 	}
 
 }

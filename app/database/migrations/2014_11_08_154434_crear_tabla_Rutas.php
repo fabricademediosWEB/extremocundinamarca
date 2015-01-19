@@ -12,20 +12,21 @@ class CrearTablaRutas extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Rutas', function(Blueprint $table)
+		Schema::create('Ciudad_EmpresasTransporte', function(Blueprint $table)
 		{
 			$table->integer('precio', 10);
 			//referencias a otras tablas
 
 			$table->unsignedInteger('ciudad_origen_id');
-			$table->foreign('ciudad_origen_id')->references('id')->on('Ciudad');
+			$table->foreign('ciudad_origen_id')->references('id')->on('Ciudades');
 
 
 			$table->unsignedInteger('ciudad_destino_id');
-			$table->foreign('ciudad_destino_id')->references('id')->on('Ciudad');
+			$table->foreign('ciudad_destino_id')->references('id')->on('Ciudades');
 
 			$table->unsignedInteger('empresa_transporte_id');
-			$table->foreign('empresa_transporte_id')->references('id')->on('Empresa_Transporte');
+			$table->foreign('empresa_transporte_id')->references('id')->on('EmpresasTransportes');
+			$table->timestamps();
 
 		});
 	}
@@ -37,7 +38,7 @@ class CrearTablaRutas extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Rutas');
+		Schema::drop('Ciudad_EmpresasTransporte');
 	}
 
 }

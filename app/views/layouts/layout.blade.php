@@ -24,10 +24,12 @@
 					<section class="top-bar-section">
 						<ul class="left">
 							<li><a href="{{url('/')}}">Inicio</a></li>
-							<li><a href="">Deportes Extremos</a></li>
+							<li><a href="{{url('prueba')}}">Deportes Extremos</a></li>
 							<li><a href="">Practica tu Deporte</a></li>
 						</ul>
-						<ul class="right">										<li><a href="{{url('login')}}">Ingresa</a></li>						<li><a href="{{url('registro')}}">Registrate</a></li>
+						<ul class="right">							
+							<li><a href="{{url('registro')}}">Registrate</a></li>
+							<li><a href="{{url('login')}}">Ingresa</a></li>
 						</ul>
 					</section>					
 				</nav>
