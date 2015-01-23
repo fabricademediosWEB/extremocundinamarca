@@ -35,9 +35,8 @@
 							))}}
 						</div>
 						<div class="large-6 columns">
-							{{Form::text('telephone2', null, array(
-								'placeholder' => 'Celular',
-								'required' => 'true'
+							{{Form::text('telephoneMobile', null, array(
+								'placeholder' => 'Celular'
 							))}}
 						</div>
 					</div>

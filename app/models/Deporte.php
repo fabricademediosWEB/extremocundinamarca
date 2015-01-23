@@ -3,7 +3,7 @@
 		
 		protected $table = 'Deportes';
 
-		public function empresa()
+		public function empresas()
 		{
 			return $this->belognsToMany('Empresa');
 		}

@@ -5,7 +5,7 @@
 
 		public function empresa()
 		{
-			return $this->belongsToMany('Empresa');
+			return $this->hasMany('Empresa');
 		}
 
 		public function ciudad()
@@ -15,7 +15,7 @@
 
 		public function telefono()
 		{
-			return $this->hasMany('Telefono');
+			return $this->belongsTo('Telefono');
 		}
-
+	}
 ?>

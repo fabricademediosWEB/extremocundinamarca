@@ -3,9 +3,9 @@
 		
 		protected $table = 'Actividades';
 
-		public function empresa()
+		public function empresas()
 		{
-			return $this->belognsToMany('Empresa');
+			return $this->belongsToMany('Empresa');
 		}
 	}
 ?>

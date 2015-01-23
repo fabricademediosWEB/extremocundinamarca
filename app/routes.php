@@ -24,7 +24,7 @@ Route::get('prueba', function(){
 	$empresa = new Empresa;
 
 	$empresa->descripcion = 'prueba';
-	$empresa->nit = 1234;
+	$empresa->nit = 12345678901;
 	$empresa->password = 'holamundo';
 
 	$empresa->save();

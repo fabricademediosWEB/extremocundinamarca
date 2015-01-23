@@ -3,7 +3,7 @@
 		
 		protected $table = 'Ciudades';
 
-		public function direccion()
+		public function direcciones()
 		{
 			return $this->hasMany('Direccion');
 		}
@@ -13,7 +13,7 @@
 			return $this->belongsTo('Departamento');
 		}
 
-		public function empresatransporte()
+		public function empresatransportes()
 		{
 			return $this->belongsToMany('EmpresasTransportes');
 		}

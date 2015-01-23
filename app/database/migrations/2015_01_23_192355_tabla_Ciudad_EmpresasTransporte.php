@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaRutas extends Migration {
+class TablaCiudadEmpresasTransporte extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,20 +14,20 @@ class CrearTablaRutas extends Migration {
 	{
 		Schema::create('Ciudad_EmpresasTransporte', function(Blueprint $table)
 		{
+			//
 			$table->integer('precio', 10);
 			//referencias a otras tablas
 
-			$table->unsignedInteger('ciudad_origen_id');
+			$table->integer('ciudad_origen_id')->unsigned();
 			$table->foreign('ciudad_origen_id')->references('id')->on('Ciudades');
 
 
-			$table->unsignedInteger('ciudad_destino_id');
+			$table->integer('ciudad_destino_id')->unsigned();
 			$table->foreign('ciudad_destino_id')->references('id')->on('Ciudades');
 
-			$table->unsignedInteger('empresa_transporte_id');
+			$table->integer('empresa_transporte_id')->unsigned();
 			$table->foreign('empresa_transporte_id')->references('id')->on('EmpresasTransportes');
 			$table->timestamps();
-
 		});
 	}
 

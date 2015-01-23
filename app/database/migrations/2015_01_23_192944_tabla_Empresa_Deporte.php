@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaEmpresaDeporte extends Migration {
+class TablaEmpresaDeporte extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,16 +12,16 @@ class CrearTablaEmpresaDeporte extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Deporte_Empresa', function(Blueprint $table)
+		Schema::create('Empresa_Deporte', function(Blueprint $table)
 		{
 			//
 			$table->integer('precio_fin_semana');
 			$table->integer('precio_dia_habil');
 
-			$table->unsignedInteger('empresa_id');
+			$table->integer('empresa_id')->unsigned();
 			$table->foreign('empresa_id')->references('id')->on('Empresas');
 
-			$table->unsignedInteger('deporte_id');
+			$table->integer('deporte_id')->unsigned();
 			$table->foreign('deporte_id')->references('id')->on('Deportes');
 			$table->timestamps();
 		});
@@ -34,7 +34,7 @@ class CrearTablaEmpresaDeporte extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Deporte_Empresa');
+		Schema::drop('Empresa_Deporte');
 	}
 
 }

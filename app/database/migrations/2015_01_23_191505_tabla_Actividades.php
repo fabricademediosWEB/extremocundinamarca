@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaDireccion extends Migration {
+class TablaActividades extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class CrearTablaDireccion extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('Direcciones', function(Blueprint $table)
+		Schema::create('Actividades', function(Blueprint $table)
 		{
+			//
 			$table->increments('id');
-			$table->string('descripcion',100);
-			$table->string('email',45);
-
-			$table->unsignedInteger('ciudad_id');
-			$table->foreign('ciudad_id')->references('id')->on('Ciudades');
+			$table->string('descripcion',45);
 			$table->timestamps();
 		});
 	}
@@ -31,7 +28,7 @@ class CrearTablaDireccion extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Direcciones');
+		Schema::drop('Actividades');
 	}
 
 }

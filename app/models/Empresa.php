@@ -3,19 +3,19 @@
 		
 		protected $table = 'Empresas';
 
-		public function actividad()
+		public function actividades()
 		{
 			return $this->belongsToMany('Actividad');
 		}
 
-		public function deporte()
+		public function deportes()
 		{
 			return $this->belognsToMany('Deporte');
 		}
 
-		public function FunctionName()
+		public function direcciones()
 		{
-			return $this->belognsToMany('Direccion');
+			return $this->hasMany('Direccion');
 		}
 			
 		public function setPasswordAttribute($value)

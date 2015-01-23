@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearTablaEmpresaActividad extends Migration {
+class TablaActividadEmpresa extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -17,10 +17,10 @@ class CrearTablaEmpresaActividad extends Migration {
 			//
 			$table->integer('precio');
 
-			$table->unsignedInteger('empresa_id');
+			$table->integer('empresa_id')->unsigned();
 			$table->foreign('empresa_id')->references('id')->on('Empresas');
 
-			$table->unsignedInteger('actividad_id');
+			$table->integer('actividad_id')->unsigned();
 			$table->foreign('actividad_id')->references('id')->on('Actividades');
 			$table->timestamps();
 		});

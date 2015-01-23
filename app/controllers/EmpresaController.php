@@ -31,22 +31,44 @@ class EmpresaController extends \BaseController {
 	 */
 	public function store()
 	{
+		//Validation Rules
+		$rules = array(
+		'nameCompany' => 'required',
+		'NIT' => 'required|digits:10',
+		'password' => 'required|min:6|alpha_num',
+		'direction' => 'required',
+		'email' => 'required|email',
+		'telefono_fijo' => 'required|between:7,10'
+		);
+
+		$pass1 = Input::get('password');
+		$passC = Input::get('passwordConfirm');
+
 		$empresa = new Empresa;
 		$direccion = new Direccion;
 		$telefono = new Telefono;
 
 		$empresa->descripcion = Input::get('nameCompany');
-		$empresa->nit = Input::get('NIT');
+		$empresa->nit = Input::get('nit');
+		if($pass1 == $passC){
+			$empresa->password = Input::get('password');
+		}else{
+			echo 'las contraseñas no coinciden, por favor reingreselas';
+		}
 		$empresa->password = Input::get('password');
+		
+		$empresa->save();
+
 
 		$direccion->descripcion = Input::get('direction');
 		$direccion->email = Input::get('email');
 		$direccion->ciudad_id = Input::get('cities');
+		$direccion->save();
 
-		$telefono->numero_telefono = Input::get('telephone');
-		$telefono->direccion_id = Input::get();
-
-
+		$telefono->telefono = Input::get('telephone');
+		$telefono=$direccion->telefono()->save($telefono);
+		$telefono->save();
+		
 	}
 
 

@@ -3,9 +3,9 @@
 		
 		protected $table = 'EmpresasTransportes';
 
-		public function Ciudad()
+		public function ciudades()
 		{
-			return $this->belongsToMany('Ciudades');
+			return $this->belongsToMany('Ciudad');
 		}
 	}
 ?>
