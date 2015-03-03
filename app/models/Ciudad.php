@@ -17,5 +17,10 @@
 		{
 			return $this->belongsToMany('EmpresasTransportes');
 		}
+		public function comboCiudad()
+		{
+			# code...
+			return DB::table('Ciudades')->orderBy('descripcion')->lists('descripcion','id');
+		}
 	}
 ?>

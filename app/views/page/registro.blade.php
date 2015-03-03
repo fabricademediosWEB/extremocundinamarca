@@ -18,29 +18,7 @@
 						'type' => 'number',
 						'required' => 'true',
 						'maxlength' => '10'
-					))}}
-					{{Form::select('cities', DB::table('ciudades')->orderBy('descripcion')->lists('descripcion','id'), null, array(
-						'placeholder' => 'Seleccione el municipio'
-					))}}
-					{{Form::text('direction', null, array(
-						'placeholder' => 'Dirección',
-						'required' => 'true',
-						'maxlength' => 200
-					))}}
-					<div class="row">
-						<div class="large-6 columns">
-							{{Form::text('telephone', null, array(
-							'placeholder' => 'Telefono',
-							'required' => 'true'
-							))}}
-						</div>
-						<div class="large-6 columns">
-							{{Form::text('telephoneMobile', null, array(
-								'placeholder' => 'Celular'
-							))}}
-						</div>
-					</div>
-					
+					))}}					
 					{{Form::email('email', null, array(
 						'placeholder' => 'Email'
 					))}}
@@ -51,17 +29,17 @@
 						'placeholder' => 'Confirmar clave'
 					))}}
 					<ul class="button-group right">					
-						<li><a href="{{url('/')}}" class="button secondary">Cancelar</a></li>
 						<li>
-							{{Form::submit('Aceptar', array(
+							<a href="#" data-reveal-id="modal">
+								{{Form::submit('Registrar', array(
 									'class' => 'button'
 								))}}
+							</a>
 						</li>
 					</ul>
 				</div>
-				</div>
-
+			</div>
 			{{Form::close()}}
 		</fieldset>			
-	</div>
+	</div>	
 @stop

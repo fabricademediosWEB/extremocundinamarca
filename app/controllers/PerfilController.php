@@ -1,7 +1,7 @@
 <?php
 
-class AuthController extends \BaseController {
-	protected $layout = 'layouts.layout';
+class PerfilController extends \BaseController {
+
 
 	/**
 	 * Display a listing of the resource.
@@ -10,10 +10,11 @@ class AuthController extends \BaseController {
 	 */
 	public function getIndex()
 	{
-		if (Auth::check()) {
-			return Redirect::to('dashboard');
-		}
-		return View::make('page.ingreso');
+		//
+
+		$ciudades = new Ciudad;
+		return View::make('dashboard.datos', array('ciudad'=>$ciudades->comboCiudad()));
+
 	}
 
 
@@ -22,11 +23,9 @@ class AuthController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function logOut()
+	public function create()
 	{
 		//
-		Auth::logout();
-        return Redirect::to('/');
 	}
 
 
@@ -36,22 +35,8 @@ class AuthController extends \BaseController {
 	 * @return Response
 	 */
 	public function store()
-	{ 
-		$data=['email'=>Input::get('emailLogin'),
-			   'password'=>Input::get('passwordLogin')];
-		
-		$empresa = new Empresa;
-
-		if(Auth::attempt($data)){
-
-			$id = Auth::user()->descripcion;
-			return Redirect::to('dashboard/'.$id);
-			$this->layout->empresa = $id;
-
-		}else{
-			echo "vayase a la ptm";
-		}
-		
+	{
+		//
 	}
 
 

@@ -21,8 +21,10 @@ class TablaDirecciones extends Migration {
 			$table->integer('id_ciudad')->unsigned();
 			$table->foreign('id_ciudad')->references('id')->on('Ciudades');
 
-			$table->integer('id_empresa')->unsigned();
-			$table->foreign('id_empresa')->references('id')->on('Empresas');
+			$table->integer('empresa_id')->unsigned();
+			$table->foreign('empresa_id')->references('id')->on('Empresas');
+
+			$table->timestamps();
 		});
 	}
 

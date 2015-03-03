@@ -17,8 +17,10 @@ class TablaEmpresas extends Migration {
 			//
 			$table->increments('id');
 			$table->string('descripcion',100);
-			$table->string('nit',10)->unique;
+			$table->string('nit',10)->unique();			
+			$table->string('email',100);
 			$table->string('password',60);
+			$table->rememberToken('remember_token',100);
 			$table->timestamps();
 		});
 	}

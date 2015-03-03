@@ -12,32 +12,44 @@
 	@yield('script')
 </head>
 <body>
-	<header class="top-bar" data-topbar role="navigation">
-		<div class="row">
-			<!--<div class="small-2 medium-1 large-1 columns five-up">-->			
-				<a href="" class="item">
-					<img src="resources/img/logo/logo.jpeg" alt="" class="small-2 medium-1 large-1 columns">
-				</a>				
-			<!--</div>-->
-			<div class="small-10 medium-11 large-11 columns">
-				<nav>
-					<section class="top-bar-section">
-						<ul class="left">
-							<li><a href="{{url('/')}}">Inicio</a></li>
-							<li><a href="{{url('prueba')}}">Deportes Extremos</a></li>
-							<li><a href="">Practica tu Deporte</a></li>
-						</ul>
-						<ul class="right">							
-							<li><a href="{{url('registro')}}">Registrate</a></li>
-							<li><a href="{{url('login')}}">Ingresa</a></li>
-						</ul>
-					</section>					
-				</nav>
-			</div>
+	<header>
+		<div class="contain-to-grid sticky">
+			<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<a href="{{url('/')}}"><h1 class="flaticon-padding logo"> Extremo Cundinamarca</h1></a>
+				</li>
+				 <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  			</ul>
+  			<section class="top-bar-section">
+   			<!-- left Nav Section -->
+   			@if(Auth::check())
+   				<ul class="right">
+   					<li class="has-dropdown"><a href="#"></a>
+   						<ul class="dropdown">
+   							<li><a href="">Editar Perfil</a></li>
+   							<li><a href="">Dashboard</a></li>
+   							<li><a href="">Cambiar Clave</a></li>
+   							<li><a href="{{url('logout')}}">Cerrar Sesion</a></li>
+   						</ul>
+   					</li>
+   				</ul>
+   			@else
+   				<ul class="left">
+					<li><a href="">Deportes Extremos</a></li>
+					<li><a href="">Practica tu Deporte</a></li>
+				</ul>
+    			<ul class="right">							
+					<li><a href="{{url('registro')}}">Registrate</a></li>
+					<li><a href="{{url('login')}}">Ingresa</a></li>
+				</ul>
+			@endif
+ 			 </section>
+			</nav>			
 		</div>
 	</header>
 	@yield('content')
-	<div class="text-centerd" id="sticky_footer">
+	<div class="text-centerd">
 		<div class="row">
 			<div class="small-12-columns">
 				<a href="">
@@ -49,5 +61,7 @@
 	{{HTML::script('js/vendor/jquery.js');}}
 	{{HTML::script('js/foundation.min.js');}}
 	{{HTML::script('js/foundation/foundation.js');}}
+	{{HTML::script('js/foundation/foundation.topbar.js')}}
+	@yield('scriptFooter')
 </body>
 </html>

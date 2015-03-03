@@ -1,1 +1,94 @@
-@font-face{font-family:'tittle';src:url("../resources/fonts/SoulMission.ttf")}.top{top:5vh}#sticky_footer{position:fixed;bottom:0;left:0;width:100%;background-color:#000}#logo{width:100%;height:100%}h1,legend{font-family:tittle}legend{font-size:22px}
+@font-face {
+  font-family: 'tittle';
+  src: url("../resources/fonts/SoulMission.ttf");
+}
+@font-face {
+  font-family: 'lema';
+  src: url("../resources/fonts/Stay Gold.otf");
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url("../resources/fonts/icons/icomoon.eot?-b9mmk");
+  src: url("../resources/fonts/icons/icomoon.eot?#iefix-b9mmk") format('embedded-opentype'), url("../resources/fonts/icons/icomoon.woff?-b9mmk") format('woff'), url("../resources/fonts/icons/icomoon.ttf?-b9mmk") format('truetype'), url("../resources/fonts/icons/icomoon.svg?-b9mmk#icomoon") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Flaticon";
+  src: url("../resources/fonts/icons/flaticon.eot");
+  src: url("../resources/fonts/icons/flaticon.eot#iefix") format("embedded-opentype"), url("../resources/fonts/icons/flaticon.woff") format("woff"), url("../resources/fonts/icons/flaticon.ttf") format("truetype"), url("../resources/fonts/icons/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+  margin-left: 20px;
+}
+.flaticon-padding:before {
+  content: "\e000";
+  font-size: 30px;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+/* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-plus:before {
+  content: "\e600";
+}
+.icon-cancel:before {
+  content: "\e601";
+}
+.icon-key:before {
+  content: "\e602";
+}
+.icon-list:before {
+  content: "\e603";
+}
+.icon-pen:before {
+  content: "\e604";
+}
+.icon-edit:before {
+  content: "\e605";
+}
+.icon-switch:before {
+  content: "\e606";
+}
+.top {
+  top: 5vh;
+  position: relative;
+}
+#sticky_footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: #000;
+}
+#logo {
+  width: 100%;
+  height: 100%;
+}
+h1,
+legend {
+  font-family: tittle;
+}
+legend {
+  font-size: 22px;
+}
+.logo {
+  color: #fff;
+}

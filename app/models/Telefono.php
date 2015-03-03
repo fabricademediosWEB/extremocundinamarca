@@ -5,7 +5,7 @@
 
 		public function direccion()
 		{
-			return $this->belongsTo('Direccion','id_direccion');
+			return $this->belongsTo('Direccion');
 		}
 	}
 ?>

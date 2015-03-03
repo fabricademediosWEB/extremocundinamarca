@@ -6,11 +6,11 @@
 	<div class="row">
 		<fieldset class="small-10 medium-8 small-centered columns top">
 			<legend>Ingresa a tu cuenta</legend>
-			{{Form::open()}}
+			{{Form::open(array('url'=>'login'))}}
 				<div class="row">
 					<div class="large-11 large-centered columns">
-						{{Form::text('companyLogin', null, array(
-							'placeholder' => 'Nombre de la Empresa',
+						{{Form::text('emailLogin', null, array(
+							'placeholder' => 'Email',
 							'required' => 'true'
 						))}}
 						{{Form::password('passwordLogin', array(

@@ -7,5 +7,10 @@
 		{
 			return $this->belongsToMany('Empresa');
 		}
+		public function comboServicios()
+		{
+			# code...
+			return DB::table('Actividades')->orderBy('descripcion')->lists('descripcion','id');
+		}
 	}
 ?>

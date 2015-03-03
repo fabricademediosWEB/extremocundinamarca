@@ -15,17 +15,24 @@ Route::get('/', function()
 {
 	return View::make('page.home');
 });
-Route::controller('registro', 'EmpresaController');
-Route::controller('login', 'AuthController');
-Route::get('eliminar/{id}', array('uses' => 'EmpresaController@destroy'));
-Route::post('registrar', array('uses' => 'EmpresaController@store'));
 
-Route::get('prueba', function(){
-	$empresa = new Empresa;
-
-	$empresa->descripcion = 'prueba';
-	$empresa->nit = 12345678901;
-	$empresa->password = 'holamundo';
-
-	$empresa->save();
+Route::get('clave', function(){
+	return View::make('dashboard.clave');
 });
+Route::get('logout', 'AuthController@logOut');
+
+Route::get('dashboard/{$id}', function ()
+{
+	return View::make('dashboard.dashboard');
+});
+
+Route::controller('servicios', 'ServiciosController');
+Route::controller('deporte', 'DeportesController');
+Route::controller('editar', 'PerfilController');
+
+Route::controller('registro', 'RegistroController');
+Route::controller('login', 'AuthController');
+Route::post('registrar', array('uses' => 'RegistroController@store'));
+Route::post('login', array('uses'=>'AuthController@store'));
+
+//Route::resource('dashboard', 'DashController');

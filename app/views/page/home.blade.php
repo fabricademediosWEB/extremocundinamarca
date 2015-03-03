@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="small-12 medium-8 medium-centered large-8 large-centered columns top">
 				<div class="flex-video">
-				    <iframe width="640" height="360" src="//www.youtube.com/embed/gohAA07ynXU?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+				    <iframe width="100%" src="//www.youtube.com/embed/gohAA07ynXU?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
